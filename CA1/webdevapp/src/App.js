@@ -1,68 +1,86 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/layout/Header'
-import Todos from './components/Todos';
-import AddTodo from './components/AddTodo';
+import Items from './components/Items';
+import AddItem from './components/AddItem';
+import About from './components/pages/About';
+//import uuid from 'uuid';
 
 import './App.css';
 
 class App extends Component {
+
+
 state = {
-  todos: [
+  items: [
     {
       id: 1,
-      title: 'Take out the trash',
-      completed: false
+      title: 'Take out the wife',
+      bought: false
     },
     {
       id: 2,
-      title: 'Dinner with wife',
-      completed: false
+      title: 'Kill the wife',
+      bought: false
     },
     {
       id: 3,
       title: 'Meeting with boss',
-      completed: false
+      bought: false
+    },
+    {
+      id: 4,
+      title: 'Meeting with boss',
+      bought: false
     }
   ]
 }
 
-// Toggle Complete
-markComplete = (id) => {
-  this.setState( {todos: this.state.todos.map(todo => {
-    if(todo.id === id){
-      todo.completed = !todo.completed
+// Toggle Bought
+bought = (id) => {
+  this.setState( {items: this.state.items.map(item => {
+    if(item.id === id){
+      item.bought = !item.bought
     }
-    return todo;
+    return item;
   }) });
 }
 
 
-//Delete Todo
-delTodo = (id) => {
-  this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] })
+//Delete Item
+delItem = (id) => {
+  this.setState({ items: [...this.state.items.filter(item => item.id !== id)] })
 }
 
+nextId = 5
 
-//Add Todo
-addTodo = (title) => {
-  const newTodo = {
-    id: 4,
+//Add Item
+addItem = (title) => {
+  const newItem = {
+    id: this.nextId,
     title,
-    completed: false
+    bought: false
   }
-  this.setState({ todos: [...this.state.todos, newTodo] });
+  this.setState({ items: [...this.state.items, newItem] });
 }
 
 
   render(){
   return (
+    <Router>
     <div className="App">
       <div className="container">
       <Header />
-      <AddTodo addTodo={this.addTodo} />
-      <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/>
+      <Route path="/" render={props => (
+        <React.Fragment>
+          <AddItem addItem={this.addItem} />
+          <Items items={this.state.items} bought={this.bought} delItem={this.delItem}/>
+        </React.Fragment>
+      )} />
+      <Route path="/about" component={About} />
       </div>
     </div>
+    </Router>
   );
   }
 }

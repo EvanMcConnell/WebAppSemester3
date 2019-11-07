@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class AddTodo extends Component {
+export class AddItem extends Component {
     state = {
         title: ''
     }
@@ -8,7 +8,7 @@ export class AddTodo extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.addTodo(this.state.title);
+        this.props.addItem(this.state.title);
         this.setState({ title: ''});
     }
 
@@ -23,7 +23,7 @@ export class AddTodo extends Component {
                     type="text" 
                     name="title" 
                     style={{ flex: '10', padding: '5px' }} 
-                    placeholder="add Todo..." 
+                    placeholder="add Item..." 
                     value={this.state.title} 
                     onChange={this.onChange}
                 />
@@ -39,4 +39,4 @@ export class AddTodo extends Component {
     }
 }
 
-export default AddTodo
+export default AddItem

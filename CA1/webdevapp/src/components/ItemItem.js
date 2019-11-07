@@ -1,27 +1,27 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
-export class TodoItem extends Component {
+export class ItemItem extends Component {
     getStyle = () => {
         return {
             background: '#f4f4f4',
             padding: '10px',
             borderBottom: '1px #ccc dotted',
-            textDecoration: this.props.todo.completed ? 'line-through' : 'none'
+            textDecoration: this.props.item.bought ? 'line-through' : 'none'
         }
     }
 
 
 
     render() {
-        const { id, title } = this.props.todo;
+        const { id, title } = this.props.item;
 
         return (
             <div style={this.getStyle()}>
                 <p>
-                    <input type="checkbox" onChange={this.props.markComplete.bind(this, id)}/> {' '}
-                    { title }
-                    <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>x</button>
+                    {<input type="checkbox" onChange={this.props.bought}/>} {' '}
+                    {title}
+                    <button onClick={this.props.delItem.bind(this, id)} style={btnStyle}>x</button>
                 </p>
             </div>
         )
@@ -30,8 +30,8 @@ export class TodoItem extends Component {
 
 
 // PropTypes
-TodoItem.propTypes = {
-    todos: PropTypes.object
+ItemItem.propTypes = {
+    items: PropTypes.object
   }
 
   const btnStyle = {
@@ -44,4 +44,4 @@ TodoItem.propTypes = {
       float: 'right'
   }
 
-export default TodoItem
+export default ItemItem
