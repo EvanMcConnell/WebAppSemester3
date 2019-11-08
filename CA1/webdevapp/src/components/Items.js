@@ -7,14 +7,16 @@ bought = () => {}
 
   render(){
       return this.props.items.map((item) => (
-        <ItemItem key={item.id} item={item} bought={this.props.bought} delItem={this.props.delItem} />
+        <ItemItem key={item.id} item={item} isBought={this.props.isBought} delItem={this.props.delItem} />
       ));
   }
 }
 
 // PropTypes
 Items.propTypes = {
-  items: PropTypes.array.isRequired
+  items: PropTypes.array.isRequired,
+  isBought: PropTypes.func.isRequired,
+  delItem: PropTypes.func.isRequired
 }
 
 export default Items;
