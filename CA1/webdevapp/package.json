@@ -6,6 +6,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-dropdown": "^1.6.4",
+    "react-native": "^0.61.4",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-simple-dropdown": "^3.2.3"
@@ -15,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 9009 -c .storybook",
     "build-storybook": "build-storybook"
   },
   "eslintConfig": {

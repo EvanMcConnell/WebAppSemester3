@@ -19,7 +19,7 @@ export class AddItem extends Component {
         
         console.log(this.state.value)
         if(this.state.title == ""){ alert("Please enter item name.")}
-        else if(this.state.value == undefined){ alert("Please select a item type.")}
+        else if(this.state.value == undefined || this.state.value == ""){ alert("Please select a item type.")}
         else{
         this.props.addItem(this.state.title, this.state.value);
         this.setState({ title: ''});

@@ -3,16 +3,18 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/layout/Header'
 import Items from './components/Items';
 import AddItem from './components/AddItem';
-import DropdownItem from './components/DropdownItem';
 import About from './components/pages/About';
+import Background from './background.jpg';
 //import uuid from 'uuid';
 
 import './App.css';
 
-var Dropdown = require('react-simple-dropdown');
-var DropdownTrigger = Dropdown.DropdownTrigger;
-var DropContent = Dropdown.DropdownContent;
 
+const headingStyle = {
+  width: '50%',
+  borderRadius: '50px',
+  background: '#ffffff'
+}
 
 
 class App extends Component {
@@ -78,33 +80,46 @@ addItem = (title, type) => {
 }
 
 
+
   render(){
   return (
-    <Router>
-    <div className="App">
-      <div className="container">
-      <Header />
-      <Route path="/" render={props => (
-        <React.Fragment>
-          <AddItem addItem={this.addItem} />
-          {/*<DropdownItem />*/}
-          <div style={{width: '60%', padding: '10px', margin: '0 auto'}}>
-          <table style={{width: '100%', tableLayout: 'fixed'}}>
-            <tr>
-              <td style={{width: '25%'}}>Bought</td>
-              <td style={{width: '25%'}}>Item Name</td>
-              <td style={{width: '25%'}}>Item Type</td>
-              <td style={{width: '25%', float: 'right'}}><p style={{textAlign: 'right'}}>Delete</p></td>
-            </tr>
-          </table>
+        <Router>
+          <div className="App">
+            <div className="container">
+            <Header />
+            <body>
+              <div style={{backgroundImage: `url($)`}}>
+            <Route path="/" render={props => (
+              <React.Fragment>
+                <html  style={{margin: '0', height: '100%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
+                {/*Add Item Bar*/}
+                <AddItem addItem={this.addItem} />
+
+                {/*Menu Headings*/}
+                <div style={{width: '60%', padding: '10px', margin: '0 auto'}}>
+                <table style={{width: '100%', tableLayout: 'fixed'}}>
+                  <tr>
+                    <td style={{width: '25%'}}><span style={headingStyle}>/ Bought \</span></td>
+                    <td style={{width: '25%'}}><span style={headingStyle}>/ Item Name \</span></td>
+                    <td style={{width: '25%'}}><span style={headingStyle}>/ Item Type \</span></td>
+                    <td style={{width: '25%',float: 'right'}}><p style={headingStyle, {textAlign: 'right'}}>Delete</p></td>
+                  </tr>
+                </table>
+                </div>
+
+                {/*List of Items*/}
+                <div style={{height: '70%'}}>
+                <Items items={this.state.items} isBought={this.isBought} delItem={this.delItem}/>
+                </div>
+                </html>
+              </React.Fragment>
+            )} />
+            <Route path="/about" component={About} />
+            </div>
+            </body>
+            </div>
           </div>
-          <Items items={this.state.items} isBought={this.isBought} delItem={this.delItem}/>
-        </React.Fragment>
-      )} />
-      <Route path="/about" component={About} />
-      </div>
-    </div>
-    </Router>
+        </Router>
   );
   }
 }

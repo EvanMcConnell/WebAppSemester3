@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export class ItemItem extends Component {
     getStyle = () => {
         return {
-            background: '#f4f4f4',
+            background: 'rgba(200, 200, 200, 0.3)',
             padding: '10px',
             width: '60%',
             borderBottom: '1px #ccc dotted',
@@ -16,7 +16,8 @@ export class ItemItem extends Component {
     foodStyle = () => {
         return {
         display: 'inline',
-        background: '#ffffff',
+        background: 'rgba(0, 255, 0)',
+        borderRadius: '45%',
         padding: '5px 10px',
         border: 'none',
 
@@ -69,7 +70,8 @@ const checkStyle = {
 
 const infoStyle = {
     display: 'inline',
-    background: '#ffffff',
+    background: 'rgba(0, 255, 0)',
+    borderRadius: '45%',
     padding: '5px 10px',
     textAlignment: 'right'
 }
