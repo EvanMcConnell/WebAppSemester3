@@ -12,16 +12,15 @@ export class ItemItem extends Component {
         }
     }
 
-
-    foodStyle = () => {
+    infoStyle = () => {
         return {
-        display: 'inline',
-        background: 'rgba(0, 255, 0)',
-        borderRadius: '45%',
-        padding: '5px 10px',
-        border: 'none',
-
-        textDecoration: this.props.item.bought ? 'line-through' : 'none'
+            display: 'inline',
+            background: 'rgba(0, 255, 0)',
+            borderRadius: '45%',
+            padding: '5px 10px',
+            textAlignment: 'right',
+    
+            opacity: this.props.item.bought ? '30%' : '100%'
         }
     }
 
@@ -37,10 +36,10 @@ export class ItemItem extends Component {
                     {<input style={checkStyle} type="checkbox" onChange={this.props.isBought.bind(this, id)}/>} {' '}
                     </td>
                     <td style={{width: '25%'}}>
-                    <span style = {spanStyle}><p style = {this.foodStyle()}>{title}</p></span>
+                    <span style = {spanStyle}><p style = {this.infoStyle()}>{title}</p></span>
                     </td>
                     <td style={{width: '25%'}}>
-                    <span style = {spanStyle}><p style = {infoStyle}>{type}</p></span>
+                    <span style = {spanStyle}><p style = {this.infoStyle()}>{type}</p></span>
                     </td>
                     <td style={{width: '25%'}}>
                     <button onClick={this.props.delItem.bind(this, id)} style={btnStyle}>x</button>
@@ -68,13 +67,6 @@ const checkStyle = {
     float: 'left'
 }
 
-const infoStyle = {
-    display: 'inline',
-    background: 'rgba(0, 255, 0)',
-    borderRadius: '45%',
-    padding: '5px 10px',
-    textAlignment: 'right'
-}
 
 const btnStyle = {
     background: '#ff0000',

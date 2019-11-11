@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { action } from '@storybook/addon-actions';
 
 export class AddItem extends Component {
     state = {
@@ -21,7 +22,9 @@ export class AddItem extends Component {
         if(this.state.title == ""){ alert("Please enter item name.")}
         else if(this.state.value == undefined || this.state.value == ""){ alert("Please select a item type.")}
         else{
-        this.props.addItem(this.state.title, this.state.value);
+        
+        if(this.props){ this.props.addItem(this.state.title, this.state.value); }
+        else{ alert("This is Storybook test item name:" + this.state.title + ", of type: " + this.state.value); }
         this.setState({ title: ''});
         }
         e.preventDefault();
@@ -36,7 +39,10 @@ export class AddItem extends Component {
     
     render() {
         return (
-            <form onSubmit={this.onSubmit}  style={{ display: 'flex', padding: '10px 100px'}}>
+
+            <form onSubmit={this.onSubmit}  style={{textAlign: 'center', display: 'flex', padding: '10px 100px'}}>
+                <table style={{position: 'absolute'}}>
+                    <tr>
                 <input 
                     type="text" 
                     name="title" 
@@ -45,7 +51,9 @@ export class AddItem extends Component {
                     value={this.state.title} 
                     onChange={this.onChangeText}
                 />
+                </tr>
 
+                <tr>
                 <select onChange={this.onSelect} value={this.state.value} onChange={this.onChangeSelect}>
                     <option value="">Type</option>
                     <option value="Fruit">Fruit</option>
@@ -55,13 +63,17 @@ export class AddItem extends Component {
                     <option value="Dairy">Dairy</option>
                     <option value="Carb">Carb</option>
                 </select>
+                </tr>
 
+                <tr>
                 <input 
                     type="submit" 
                     value="Submit" 
                     className="btn" 
                     style={{flex: '1'}} 
                 />
+                </tr>
+                </table>
             </form>
         )
     }

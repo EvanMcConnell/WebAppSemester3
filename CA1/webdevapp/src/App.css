@@ -21,12 +21,13 @@ a {
 .btn{
   display: inline-block;
   border: none;
-  background: #555;
-  color: #fff;
+  background: #00ff00;
+  color: #000000;
   padding: 7px 20px;
   cursor: pointer;
+  border-radius: 45%;
 }
 
 .btn:hover{
-  background: #666;
+  background: #00ee00;
 }

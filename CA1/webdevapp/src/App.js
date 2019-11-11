@@ -84,17 +84,20 @@ addItem = (title, type) => {
   render(){
   return (
         <Router>
+          <div style = {{position: 'absolute', top: '0', right: '0', left: '0', bottom: '0',backgroundImage: `url(${Background})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100%'}}>
+          <div style = {{position: 'absolute', top: '0', right: '0', left: '0', bottom: '0',background: 'rgba(0, 0, 0, 0.4)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100%'}}>
           <div className="App">
             <div className="container">
             <Header />
             <body>
-              <div style={{backgroundImage: `url($)`}}>
-            <Route path="/" render={props => (
+            <Route exact path="/" render={props => (
               <React.Fragment>
-                <html  style={{margin: '0', height: '100%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
-                {/*Add Item Bar*/}
+                <div style = {{float: 'left'}}>
+                {/*Add Item Form*/}
                 <AddItem addItem={this.addItem} />
+                </div>
 
+                <div style = {{width: '90%', float: 'right'}}>
                 {/*Menu Headings*/}
                 <div style={{width: '60%', padding: '10px', margin: '0 auto'}}>
                 <table style={{width: '100%', tableLayout: 'fixed'}}>
@@ -102,7 +105,7 @@ addItem = (title, type) => {
                     <td style={{width: '25%'}}><span style={headingStyle}>/ Bought \</span></td>
                     <td style={{width: '25%'}}><span style={headingStyle}>/ Item Name \</span></td>
                     <td style={{width: '25%'}}><span style={headingStyle}>/ Item Type \</span></td>
-                    <td style={{width: '25%',float: 'right'}}><p style={headingStyle, {textAlign: 'right'}}>Delete</p></td>
+                    <td style={{width: '25%',float: 'right'}}><span style={{borderRadius: '50px', background: '#ffffff', textAlign: 'right'}}></span></td>
                   </tr>
                 </table>
                 </div>
@@ -111,13 +114,14 @@ addItem = (title, type) => {
                 <div style={{height: '70%'}}>
                 <Items items={this.state.items} isBought={this.isBought} delItem={this.delItem}/>
                 </div>
-                </html>
+                </div>
               </React.Fragment>
             )} />
             <Route path="/about" component={About} />
-            </div>
             </body>
             </div>
+          </div>
+          </div>
           </div>
         </Router>
   );

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ItemItem from './ItemItem';
+import Item from './Item';
 import PropTypes from 'prop-types';
 
 class Items extends Component {
@@ -7,7 +7,7 @@ bought = () => {}
 
   render(){
       return this.props.items.map((item) => (
-        <ItemItem key={item.id} item={item} isBought={this.props.isBought} delItem={this.props.delItem} />
+        <Item key={item.id} item={item} isBought={this.props.isBought} delItem={this.props.delItem} />
       ));
   }
 }

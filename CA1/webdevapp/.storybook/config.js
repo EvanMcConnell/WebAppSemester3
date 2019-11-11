@@ -12,4 +12,10 @@ function loadStories(){
     importAll(req)
 }*/
 
-configure(require.context('../src', true, /\.stories\.js$/), module);
+//configure(require.context('../src', true, /\.stories\.js$/), module);
+
+function loadStories(){
+    require('../stories/index.js');
+}
+
+configure(loadStories, module);

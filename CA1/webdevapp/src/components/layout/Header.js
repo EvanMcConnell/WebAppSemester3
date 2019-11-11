@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Header(){
     return (
         <header style={headerStyle}>
-            <h1>TodoList</h1>
+            <h1>Food List</h1>
             <Link style={linkStyle} to="/">Home</Link> | <Link style={linkStyle} to="/about">About</Link>
         </header>
     )
@@ -13,14 +13,14 @@ function Header(){
 
 const headerStyle = {
     background: 'rgba(200, 200, 200, 0.3)',
-    color: '#66ffff',
+
     textAlign: 'center',
     padding: '10px'
 }
 
 
 const linkStyle = {
-    color: '#fff',
+    color: '#000000',
     textDecoration: 'none'
 }
 
