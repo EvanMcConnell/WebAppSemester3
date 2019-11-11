@@ -4,6 +4,12 @@ import Header from './components/layout/Header'
 import Items from './components/Items';
 import AddItem from './components/AddItem';
 import About from './components/pages/About';
+import Fruit from './components/pages/Fruit';
+import Carb from './components/pages/Carb';
+import Dairy from './components/pages/Dairy';
+import Meat from './components/pages/Meat';
+import Snack from './components/pages/Snack';
+import Veg from './components/pages/Veg';
 import Background from './background.jpg';
 //import uuid from 'uuid';
 
@@ -118,6 +124,12 @@ addItem = (title, type) => {
               </React.Fragment>
             )} />
             <Route path="/about" component={About} />
+            <Route path="/fruit" component={Fruit} />
+            <Route path="/carb" component={Carb} />
+            <Route path="/dairy" component={Dairy} />
+            <Route path="/meat" component={Meat} />
+            <Route path="/snacks" component={Snack} />
+            <Route path="/vegetables" component={Veg} />
             </body>
             </div>
           </div>

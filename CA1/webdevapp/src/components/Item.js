@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export class ItemItem extends Component {
     getStyle = () => {
@@ -28,6 +29,8 @@ export class ItemItem extends Component {
     render() {
         const { id, title, type } = this.props.item;
 
+        const typeLink = '/'+ type
+
         return (
             <div style={this.getStyle()}>
                 <table style={{width: "100%"}}>
@@ -39,7 +42,7 @@ export class ItemItem extends Component {
                     <span style = {spanStyle}><p style = {this.infoStyle()}>{title}</p></span>
                     </td>
                     <td style={{width: '25%'}}>
-                    <span style = {spanStyle}><p style = {this.infoStyle()}>{type}</p></span>
+                    <span style = {spanStyle}><Link style = {this.infoStyle()} to={type}>{typeLink}</Link></span>
                     </td>
                     <td style={{width: '25%'}}>
                     <button onClick={this.props.delItem.bind(this, id)} style={btnStyle}>x</button>

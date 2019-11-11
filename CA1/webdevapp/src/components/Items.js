@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 class Items extends Component {
 bought = () => {}
-
   render(){
-      return this.props.items.map((item) => (
+      return this.props.items
+      .map((item) => (
         <Item key={item.id} item={item} isBought={this.props.isBought} delItem={this.props.delItem} />
       ));
   }
