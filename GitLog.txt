@@ -1,0 +1,53 @@
+commit 864f827db42a16b52998d450ae575880a3a3e212
+Author: Evan McConnell <mcconnell.evan@gmail.com>
+Date:   Mon Nov 11 14:35:01 2019 +0000
+
+    Final Push
+    
+    Extra Routing
+
+commit 9c58cee84eb24d9083b70de7e167d439fc4e0ee3
+Author: Evan McConnell <mcconnell.evan@gmail.com>
+Date:   Mon Nov 11 00:34:33 2019 +0000
+
+    Storybook Split
+    
+    Attempted to split the storybook into multiples stories
+
+commit 134dfda6836d3ab950db300026e2251fcf16c0f6
+Author: Evan McConnell <mcconnell.evan@gmail.com>
+Date:   Sat Nov 9 23:10:53 2019 +0000
+
+    Storybook Full Integration
+    
+    App is now accessable through running storybook, though the background image is broken.
+
+commit 03383962399cf11188cec2d1e4d7e440d15fde3b
+Author: Evan McConnell <mcconnell.evan@gmail.com>
+Date:   Fri Nov 8 21:50:35 2019 +0000
+
+    Dropdown Working
+
+commit fd80fe44458ff8877811efada002b011198244a7
+Author: Evan McConnell <mcconnell.evan@gmail.com>
+Date:   Thu Nov 7 17:36:35 2019 +0000
+
+    transfer from laptop to pc
+
+commit c132b295cfc2b3c2f448ba2b73f684304590efb4
+Author: Evan McConnell <mcconnell.evan@gmail.com>
+Date:   Tue Nov 5 23:40:28 2019 +0000
+
+    .
+
+commit ea48dfcf287e37cbee5553c8ee94fde796c65ba9
+Author: Evan McConnell <mcconnell.evan@gmail.com>
+Date:   Tue Nov 5 15:43:54 2019 +0000
+
+    Initial Push
+
+commit 74dd0c54ae0935a1145bed2ac43838caa2cebd8c
+Author: Evan McConnell <mcconnell.evan@gmail.com>
+Date:   Tue Nov 5 15:42:48 2019 +0000
+
+    Initial commit
