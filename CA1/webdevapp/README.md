@@ -1,68 +1,72 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# BSc (Hons.) Level 8 - Assignment 1 - Single Page app.
 
-## Available Scripts
+Name: Evan McConnell
 
-In the project directory, you can run:
+## Overview.
 
-### `npm start`
+A web based application which can be used to manage a shopping list of food items.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+. . . . . List of user features  . . . .
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Adding items to the list based on input from a form.
+- Deleting items from the list.
+- Info pages about the different food types
+- Marking items as bought
 
-### `npm test`
+## Setup.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- From the root folder: cd CA1/webdevapp
+-                       npm install
+-                       npm start
+- The app should now be running at http://localhost:3000
 
-### `npm run build`
+## Data Model Design.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Data Model Design]()
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## UI Design.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+. . . . . Screenshots of the app's views with brief statements of their use (see examples below) . . . . . . .
 
-### `npm run eject`
+![][main]
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+>> Shows a card for each contact in the datastore. This contact list can be filtered by name and gender. A contact can be edited or deleted a contact. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![][detail]
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+>> . . . bla bla bla . . . . . 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Routing.
 
-## Learn More
+. . . . List each route supported by the app. For each one state the associated view and whether it's public/private (requires authentication) . . . . .
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- /articles (public)- displays all published articles - title and author only.
+- /articles/:id (private) - detail view of a particular article.
++ /articles/:author:id - display all articles by a specific author.
+- etc
+- etc
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Storybook.
 
-### Code Splitting
+. . . . . Include a screenshot of the fully expanded list of stories from the tool's UI (see below). Group the stories appropriately (e.g. Contact page group) . . . .
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+![][stories]
 
-### Analyzing the Bundle Size
+. . . . (Optional) State any non-standard Storybook add-ons used and include a screenshot(s) to illustrate.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Backend (Optional).
 
-### Making a Progressive Web App
+. . . . . Briefly explain any backend used by the app (e.g. JSON-server, Open API) . . . . . .  
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Authentication (Optional).
 
-### Advanced Configuration
+. . . . Briefly explain the authentication method used by your app (e.g. JWT, Firebase) ). If user registration is not supported, mention test username/password pairs available . . . . . .
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Independent learning.
 
-### Deployment
+. . . . . State any non-standard aspects of React or other related technologies that you researched and applied in this assignment, other than those covered by the two previous sections . . . . .
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[model]: ./img/model.png
+[main]: ./img/main.png
+[detail]: ./img/detail.png
+[stories]: ./img/stories.png
