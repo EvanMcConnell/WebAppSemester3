@@ -5,8 +5,12 @@ import app from '../App';
 
 export class AddItem extends Component {
     state = {
-        title: ''
-    }
+        title: '', type: '', bought: false
+    };
+
+    handleTitleChange = (e) =>  this.setState({title: e.target.value});
+    handleTypeChange = (e) =>  this.setState({type: e.target.value});
+
 
     currentType = 'test'
     onSelect = (e) => {
@@ -56,7 +60,7 @@ export class AddItem extends Component {
     render() {
         return (
 
-            <form onSubmit={this.onSubmit}  style={{textAlign: 'center', display: 'flex', padding: '10px 100px'}}>
+            /*<form onSubmit={this.onSubmit}  style={{textAlign: 'center', display: 'flex', padding: '10px 100px'}}>
                 <table style={{position: 'absolute'}}>
                     <tr>
                 <input 
@@ -90,8 +94,29 @@ export class AddItem extends Component {
                 />
                 </tr>
                 </table>
-            </form>
-        )
+            </form>*/
+
+            <form>
+            <div>
+                <input type="text"
+                    placeholder="Title"
+                    value={this.state.title}
+                    onChange={ this.handleTitleChange } />
+            </div>
+            <div>
+            <select onChange={this.handleTypeChange} value={this.state.value} onChange={this.state.type}>
+                    <option value="">Type</option>
+                    <option value="Fruit">Fruit</option>
+                    <option value="Veg">Veg</option>
+                    <option value="Meat">Meat</option>
+                    <option value="Snack">Snack</option>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Carb">Carb</option>
+                </select>
+            </div>
+            <button type="submit" className="btn btn-primary"> Submit </button>
+        </form>            
+        );
     }
 }
 
