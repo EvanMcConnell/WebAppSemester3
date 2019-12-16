@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-export class ItemItem extends Component {
+export class Item extends Component {
     getStyle = () => {
         return {
             background: 'rgba(200, 200, 200, 0.3)',
@@ -45,7 +45,7 @@ export class ItemItem extends Component {
                     <span style = {spanStyle}><Link style = {this.infoStyle()} to={type}>{typeLink}</Link></span>
                     </td>
                     <td style={{width: '25%'}}>
-                    <button onClick={this.props.delItem.bind(this, id)} style={btnStyle}>x</button>
+                    <button onClick={this.props.delete.bind(this, id)} style={btnStyle}>x</button>
                     </td>
                     </tr>
                 </table>
@@ -56,7 +56,7 @@ export class ItemItem extends Component {
 
 
 // PropTypes
-ItemItem.propTypes = {
+Item.propTypes = {
     items: PropTypes.object
 }
 
@@ -81,4 +81,4 @@ const btnStyle = {
     float: 'right'
 }
 
-export default ItemItem
+export default Item

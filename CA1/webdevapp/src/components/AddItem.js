@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { action } from '@storybook/addon-actions';
+import api from '../datastore/stubAPI';
+import app from '../App';
 
 export class AddItem extends Component {
     state = {
         title: ''
     }
-
-
 
     currentType = 'test'
     onSelect = (e) => {
@@ -16,7 +16,7 @@ export class AddItem extends Component {
     }
 
 
-    onSubmit = (e) => {
+    /*onSubmit = (e) => {
         
         console.log(this.state.value)
         if(this.state.title == ""){ alert("Please enter item name.")}
@@ -26,6 +26,22 @@ export class AddItem extends Component {
         if(this.props){ this.props.addItem(this.state.title, this.state.value); }
         else{ alert("This is Storybook test item name:" + this.state.title + ", of type: " + this.state.value); }
         this.setState({ title: ''});
+        }
+        e.preventDefault();
+    }*/
+
+    onSubmit = (e) => {
+        let theseItems = app.items;
+        console.log(theseItems);
+        //console.log(this.state.value)
+        if(this.state.title == ""){ alert("Please enter item name.")}
+        else if(this.state.value == undefined || this.state.value == ""){ alert("Please select a item type.")}
+        else{
+        /*if(this.props){ this.props.addItem(this.state.title, this.state.value); }
+        else{ alert("This is Storybook test item name:" + this.state.title + ", of type: " + this.state.value); }
+        this.setState({ title: ''});*/
+            console.log(this.state.title);
+            api.add(this.state.title, this.state.value, false);
         }
         e.preventDefault();
     }

@@ -11,6 +11,8 @@ import Meat from './components/pages/Meat';
 import Snack from './components/pages/Snack';
 import Veg from './components/pages/Veg';
 import Background from './background.jpg';
+import api from './datastore/stubAPI';
+import _ from 'lodash';
 //import uuid from 'uuid';
 
 import './App.css';
@@ -26,7 +28,7 @@ const headingStyle = {
 class App extends Component {
 
 
-state = {
+/*state = {
   items: [
     {
       id: 1,
@@ -55,6 +57,12 @@ state = {
   ]
 }
 
+componentDidMount(){
+  let{ results: items } = JSON.parse(res.text);
+  api.initialize(items);
+  this.setState({});
+}*/
+
 // Toggle Bought
 isBought = (id) => {
   this.setState( {items: this.state.items.map((item) => {
@@ -67,9 +75,9 @@ isBought = (id) => {
 
 
 //Delete Item
-delItem = (id) => {
+/*delItem = (id) => {
   this.setState({ items: [...this.state.items.filter(item => item.id !== id)] })
-}
+}*/
 
 nextId = 5
 
@@ -88,6 +96,8 @@ addItem = (title, type) => {
 
 
   render(){
+    let items = api.getAll();
+    console.log(items);
   return (
         <Router>
           <div style = {{position: 'absolute', top: '0', right: '0', left: '0', bottom: '0',backgroundImage: `url(${Background})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', height: '100%'}}>
@@ -96,11 +106,11 @@ addItem = (title, type) => {
             <div className="container">
             <Header />
             <body>
-            <Route exact path="/" render={props => (
+            <Route path="/" render={props => (
               <React.Fragment>
                 <div style = {{float: 'left'}}>
                 {/*Add Item Form*/}
-                <AddItem addItem={this.addItem} />
+                <AddItem add={api.add} />
                 </div>
 
                 <div style = {{width: '90%', float: 'right'}}>
@@ -118,7 +128,7 @@ addItem = (title, type) => {
 
                 {/*List of Items*/}
                 <div style={{height: '70%'}}>
-                <Items items={this.state.items} isBought={this.isBought} delItem={this.delItem}/>
+                <Items items={items} isBought={api.isBought} delete={api.delete}/>
                 </div>
                 </div>
               </React.Fragment>
