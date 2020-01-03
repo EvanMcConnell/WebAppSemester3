@@ -11,7 +11,7 @@ A web based application which can be used to manage a shopping list of food item
 - Changing the quantity of items
 
 	[intended but not functioning]
-	
+
 - Adding items to the list based on input from a form.
 - Deleting items from the list.
 - Info pages about the different food types
@@ -19,17 +19,19 @@ A web based application which can be used to manage a shopping list of food item
 
 ## Setup.
 
-- From the root folder: cd CA2/newnodeapp
-						npm install
-						npm install --save-dev babel-cli
-						npm install --save-dev babel-preset-env
-						npm install --save-dev nodemon
-						npm install dotenv --save
-						npm install --save-dev eslint babel-eslint
-						npm install --save express
-						npm start
--
-- Open a new terminal window: 	cd CA2/newnodeapp/shoppinglist
+- From the root folder: 
+								cd CA2/newnodeapp
+-								npm install
+-								npm install --save-dev babel-cli
+-								npm install --save-dev babel-preset-env
+-								npm install --save-dev nodemon
+-								npm install dotenv --save
+-								npm install --save-dev eslint babel-eslint
+-								npm install --save express
+-								npm start
+
+- Open a new terminal window: 	
+								cd CA2/newnodeapp/shoppinglist
 -                       		npm install
 -                       		npm start
 
