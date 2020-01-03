@@ -20,15 +20,15 @@ A web based application which can be used to manage a shopping list of food item
 ## Setup.
 
 - From the root folder: 
-								cd CA2/newnodeapp
--								npm install
--								npm install --save-dev babel-cli
--								npm install --save-dev babel-preset-env
--								npm install --save-dev nodemon
--								npm install dotenv --save
--								npm install --save-dev eslint babel-eslint
--								npm install --save express
--								npm start
+							cd CA2/newnodeapp
+-							npm install
+-							npm install --save-dev babel-cli
+-							npm install --save-dev babel-preset-env
+-							npm install --save-dev nodemon
+-							npm install dotenv --save
+-							npm install --save-dev eslint babel-eslint
+-							npm install --save express
+-							npm start
 
 - Open a new terminal window: 	
 								cd CA2/newnodeapp/shoppinglist
